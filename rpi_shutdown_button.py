@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+from subprocess import call
+from time import sleep
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
@@ -10,5 +11,5 @@ while True:
     input_state = GPIO.input(18)
     if input_state == False:
         print('Shutdown initiated ...')
-        from subprocess import call
-        call("shutdown -h now", shell=True)
+        call("systemctl poweroff", shell=True)
+    sleep(1)
