@@ -8,8 +8,6 @@
 
 SICHTEN: 
 
-PROBLEM: USES 100% CPU TIME
-
 http://razzpisampler.oreilly.com/ch07.html
 
 https://www.raspberrypi.org/forums/viewtopic.php?t=133665
@@ -21,12 +19,10 @@ Service à la https://github.com/workinghard/jslisten
 https://maker-tutorials.com/raspberry-pi-mit-einer-bueroklammer-ausschalten-bzw-herunterfahren/
 
 ---
+Place script in `/home/pi/projects/rpi_shutdown_button/rpi_shutdown_button.py`
 
-Start at Raspbian Startup by putting it in /etc/rc.local
-
-In /etc/rc.local: /home/pi/projects/rpi_shutdown_button/rpi_shutdown_button.py
-
-chmod +x /home/pi/projects/rpi_shutdown_button/rpi_shutdown_button.py
+Start at Raspbian Startup by putting shutdown-button.service in /etc/systemd/system,
+then enable with `systemctl enable shutdown-button.service`
 
 ---
 
