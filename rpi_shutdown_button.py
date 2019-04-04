@@ -23,6 +23,6 @@ GPIO.setup(input_pin_number, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 # block until rise in voltage is detected
 GPIO.wait_for_edge(input_pin_number, GPIO.RISING)
-    if should_print_to_console:
-        print('Shutdown initiated ...')
+if should_print_to_console:
+    print('Shutdown initiated ...')
 call("systemctl poweroff", shell=True)
